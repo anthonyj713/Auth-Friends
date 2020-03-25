@@ -24,6 +24,7 @@ class Login extends React.Component {
         axiosWithAuth()
         .post('/api/login', this.state.credentials)
         .then(res => {
+            console.log(res);
             window.localStorage.setItem('token', res.data.payload);
             this.props.history.push('/protected');
         })
@@ -37,12 +38,14 @@ class Login extends React.Component {
                     <input
                         type='text'
                         name='username'
+                        placeholder='Username'
                         value={this.state.credentials.username}
-                        onchange={this.handleChange}
+                        onChange={this.handleChange}
                         />
                     <input
                         type='password'
                         name='password'
+                        placeholder='Password'
                         value={this.state.credentials.password}
                         onChange={this.handleChange}
                         />

@@ -41,7 +41,7 @@ render() {
                     onChange={this.handleChange} 
                     />
                 <input
-                    type='text'
+                    type='password'
                     name='password'
                     placeholder='Password'
                     value={this.state.credentials.password}
